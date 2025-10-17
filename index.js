@@ -13,15 +13,18 @@
 //loop through each element
 //if one element shows up more than once return true
 //two loops, first loop iterates through the array and the second loop starts at i+1 and checks if the previous element matches
+//dont forget to use an object this time bryan
+//check if its already in the object if it is return true if not then =true to continue the loop and check if the number shows up again
 const containsDuplicate = (nums) => {
-  for(let i=0;i<nums.length;i++){
-    for(let j=i+1;j<nums.length;j++){
-      if(nums[i]===nums[j]){
-        return true
-      }
+  const obj = {};
+  for(let i=0; i<nums.length;i++){
+    if(obj[nums[i]]){
+    return true;
+    } else {
+      obj[nums[i]] = true;
     }
-  }
-  return false;
+  };
+    return false;
   //write your code here
 };
 
