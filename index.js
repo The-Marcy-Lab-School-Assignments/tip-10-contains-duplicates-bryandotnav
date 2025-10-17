@@ -10,8 +10,18 @@
  * - containsDuplicate([1,2,3,4]) → false  
  * - containsDuplicate([1,1,1,3,3,4,3,2,4,2]) → true
  */
-
+//loop through each element
+//if one element shows up more than once return true
+//two loops, first loop iterates through the array and the second loop starts at i+1 and checks if the previous element matches
 const containsDuplicate = (nums) => {
+  for(let i=0;i<nums.length;i++){
+    for(let j=i+1;j<nums.length;j++){
+      if(nums[i]===nums[j]){
+        return true
+      }
+    }
+  }
+  return false;
   //write your code here
 };
 
